@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/customnavbar.css">
+    
+    <link rel="stylesheet" href="/static/bootstrap/js2/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		
+		<!-- STYLE CSS -->
+	<link rel="stylesheet" href="/static/bootstrap/js2/css/style.css">
+    
+    <title>Document</title>
+</head>
+<body>
+        
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark  static-top background">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/static/images/v68_8.png" alt="..." height=50px>
+          </a>
+          <a class="navbar-brand" href="#"> <h2>Champion league</h2> </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="{% url 'HOME' %}">  Home</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="wrapper">
+        <div class="inner" style="background:url('/static/images/PngItem_1475889'); background-size: 100% 100%;">
+            <form action=""  method="post">
+              {% csrf_token %}
+                
+                <div class="p-5"></div>
+                <h3 style="color: white;">Sign In</h3>
+                <div class="form-group">
+                  <div style="font-size: small; background-color: white; color: rgb(102, 30, 30);">
+                   {% if context %}
+
+                   {{context}}
+
+                   {% endif %}
+                  </div>
+                </div>
+                <div class="form-wrapper" style="color: white;">
+                    <label for="">username</label>
+                    <input type="text" class="form-control" name="username">
+                </div>
+                <div class="form-wrapper">
+                </div>
+                <div class="form-wrapper" style="color: white;">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <div class="form-wrapper">  
+                </div>
+
+                <div class="row  p-3">
+                    <div class="col-md-12  " style="text-align: center;">
+                        <input type="submit" value="Sign In" class="btn mb-2 btn-lg btn-block mb-md-0 btn-outline-light">
+                      <a href="{% url 'SIGNINUP' %}" class="btn mb-2 btn-lg btn-block mb-md-0 btn-outline-light" role="button" aria-disabled="true">Sign Up</a>
+                      
+                    </div>
+                    </div>
+                    
+                    <div class="px-5"></div>
+                
+                    <div class="p-5"></div>
+
+                
+
+            </form>
+        </div>
+    </div>
+    
+      <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

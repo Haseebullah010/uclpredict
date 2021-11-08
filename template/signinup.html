@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/customnavbar.css">
+    
+    <link rel="stylesheet" href="/static/bootstrap/js2/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		
+		<!-- STYLE CSS -->
+	<link rel="stylesheet" href="/static/bootstrap/js2/css/style.css">
+  <script src="/static/bootstrap/js/jquery.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+        
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark  static-top background">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/static/images/v68_8.png" alt="..." height=50px>
+          </a>
+          <a class="navbar-brand" href="#"> <h2>Champion league</h2> </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="{% url 'HOME' %}">  Home</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="p-3"></div>
+
+      <div class="wrapper">
+
+        <div class="inner" style="background:url('/static/images/oie_umloIbtxGIQ9'); background-size: 100% 100%; background-position: right center; background-repeat: no-repeat;">
+            <form action="" method="POST" >
+              {% csrf_token %}
+                <h3 style="color: white;">Sign Up</h3>
+               <div class="form-group">
+                    <div class="form-wrapper">
+                        <label for="">First Name</label>
+                        <input type="text" class="form-control" name="firstname">
+                    </div>
+                    <div class="form-wrapper">
+                        <label for="">Last Name</label>
+                        <input type="text" class="form-control" name="lastname">
+                    </div>
+                </div>
+                <div class="form-wrapper">
+                  <small id="result"></small>
+              </div>
+              
+                <div class="form-wrapper">
+                    <label for="">User Name</label>
+                    <input type="text" class="form-control" name="username" id="checkname" onkeyup="checkuser()">
+                </div>
+                
+                <div class="form-wrapper">
+                  <label for="">Email</label>
+                  <input type="email" class="form-control" name="email">
+              </div>
+                <!-- <div class="form-group">
+                  <div class="form-wrapper">
+                      <label for="">Email</label>
+                      <input type="email" class="form-control" name="firstname">
+                  </div>
+                  <div class="form-wrapper">
+                      <label for="">Contact Number</label>
+                      <input type="number" class="form-control" name="lastname">
+                  </div>
+              </div> -->
+               
+                <div class="form-wrapper">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" name="password1">
+                </div>
+                <!-- <div class="form-wrapper">
+                  <label for="">Password cnf</label>
+                  <input type="password" class="form-control" name="password2">
+              </div> -->
+
+              
+                
+                <div class="row  p-3">
+                  <div class="col-md-12  " style="text-align: center;">
+                <input type="submit" value="Sign Up" class="btn btn-lg btn-block active btn-outline-dark" id="submitbtn">
+                  </div>
+                </div>   
+                {% if status %} 
+                    {{status}}
+                    
+                {% endif %}
+               
+            </form>
+        </div>
+    </div>
+
+    <script>
+      function checkuser(){
+        let un = document.getElementById("checkname").value;
+        $.ajax ({
+          url:"{% url 'check_user' %}",
+          type:"get",
+          data : {user_n:un},
+          success:function(data){
+            if (data== "Exists"){
+              $("#result").html("This user name already taken").addClass("text-danger");
+              $("#checkname").addClass("alert alert-danger");
+              $("#submitbtn").attr("disabled","disabled")
+            
+
+            }
+            else{
+              $("#result").html("");
+              $("#checkname").removeClass("alert alert-danger");
+              $("#submitbtn").removeAttr("disabled")
+            
+             
+              
+            }
+          }
+        })
+      }
+    </script>
+    
+      <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/customnavbar.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark  static-top background">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="/static/images/v68_8.png" alt="..." height=50px>
+          </a>
+          <a class="navbar-brand" href="#"> <h4>Champion league</h4> </a>
+
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                
+              <li class="nav-item px-1">
+                <a class="nav-link active btn btn-block btn-outline-dark " aria-current="page" href="{% url 'HOME' %}">Home</a>
+              </li>
+              
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="py-5"></div>
+      <div >
+     {% if context %}
+        {% for i in context %}
+        <div class="row"><h3 style="color: white;">{{i.date}}</h3></div>
+
+        <div class="row p-3 border border-light">
+          <div class="col" style="text-align:left ; color: white;">{{i.group}}</div>
+          <div class="col" style="text-align:center;color: white;"><h6 style="text-align:center">  {{i.team1}}  
+             <img src="{{ i.flag1 }}" data-sizes="auto" style="width: 5%; height: 100%;" alt=""></h6></div>
+          <div class="col" style="text-align:left;color: white;">{{i.result}}</div>
+          <div class="col" style="text-align:left;color: white;"><h6 style="text-align:left">
+            <img src="{{ i.flag2 }}" data-sizes="auto" style="width: 5%; height: 150%;" alt="">
+            {{i.team2}}  
+          </h6></div>
+        </div>
+      
+      {% endfor %}
+     {% endif %}
+    </div>
+         
+    <script src="https://kit.fontawesome.com/4f8ac3e447.js" crossorigin="anonymous"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

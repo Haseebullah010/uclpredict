@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="static\bootstrap\css\bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/customnavbar.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<style>
+  .carousel-item {
+height: 90vh;
+min-height: 350px;
+background: no-repeat center center scroll;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+</style>
+
+
+<body >
+    
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark  static-top background">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'HOME' %}">
+            <img src="static\images\v68_8.png" alt="..." height=50px>
+          </a>
+          <a class="navbar-brand" href="{% url 'HOME' %}"> <h4>Champion league</h4> </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active btn btn-block " aria-current="page" href="{% url 'HOME' %}">Rivalries</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link btn btn-block " aria-current="page" href="{% url 'TRANSFERRUMORS' %}">Transfer Rumors</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link btn btn-block " href="{% url 'TOP8TEAM' %}">Top 8 Teams</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link btn btn-block " href="{% url 'FIFAPRO11' %}">Fifa Pro World 11</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link btn btn-block "  href="{% url 'GREATTESTALLTIME' %}">Greatest All the Time</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link btn btn-block  " href="{% url 'UCLTOPSCORER' %}">Ucl Top Scorrer</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link btn btn-block " href="{% url 'UCLWINNER' %}">Ucl winner</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link btn  btn-block " href="{% url 'TOPPREDICTORS' %}">Top Predictors</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link btn  btn-block btn-outline-primary" href="{% url 'USER_LOGOUT' %}">logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <header >
+      
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
+            
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9" aria-label="Slide 9"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="10" aria-label="Slide 10"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="11" aria-label="Slide 11"></button>
+            
+        </div>
+        <div class="carousel-inner " >
+          
+          <div class="carousel-item active ">
+            <a href="{% url 'ONE' %}" >
+           <img class="d-block w-100 h-100"  src="/static/images/Scrolling page front images/Ansufati.jpg" alt="First slide">
+          
+          </a>
+          </div>
+          <div class="carousel-item">
+           <a href="{% url 'two' %}">
+            
+            <img class="d-block w-100  h-100" src="/static/images/Scrolling page front images/cirio immobile.jpg" alt="Second slide">
+          
+          </a>
+            
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'three' %}">
+            <img class="d-block w-100 h-100" src="/static/images/Scrolling page front images/Cristiano Ronaldo.jpg"  alt="Third slide">
+          </a>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'four' %}">
+              <img class="d-block w-100 h-100" src="/static/images/Scrolling page front images/Erling Haaland.jpg"  alt="Third slide">
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'five' %}">
+              <img class="d-block w-100 h-100" src="/static/images/Scrolling page front images/Kante.jpg"  alt="Third slide">
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'six' %}">
+              <img class="d-block w-100 h-100" src="/static/images/Scrolling page front images/Karim Benzema.jpg"  alt="Third slide">
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="{% url 'seven' %}">
+              <img class="d-block w-100 h-100" src="/static/images/Scrolling page front images/Kilian mbappe.jpg"  alt="Third slide">
+            </a>
+          </div>
+          
+          <div class="carousel-item">
+            <a href="{% url 'eight' %}">
+              <img class="d-block w-100 h-100" src="/static/images/Scrolling page front images/Leonardo bonucci.jpg"  alt="Third slide">
+            </a>
+          </div>
+          
+          <div class="carousel-item">
+            <a href="{% url 'nine' %}">
+              <img class="d-block w-100 h-100" src="/static/images/Scrolling page front images/Lewandowski.jpg"  alt="Third slide">
+            </a>
+          </div>
+          
+          <div class="carousel-item">
+            <a href="{% url 'ten' %}">
+              <img class="d-block w-100 h-100" src="/static/images/Scrolling page front images/Lionel Messi.jpg"  alt="Third slide">
+            </a>
+          </div>
+          
+          <div class="carousel-item">
+            <a href="{% url 'eleven' %}">
+              <img class="d-block w-100 h-100" src="/static/images/Scrolling page front images/Mohamed Salah.jpg"  alt="Third slide">
+            </a>
+          </div>
+          
+          <div class="carousel-item">
+            <a href="{% url 'twelve' %}">
+              <img class="d-block w-100 h-100" src="/static/images/Scrolling page front images/Raheem sterling.jpg"  alt="Third slide">
+            </a>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        </div>
+      </header>
+        <div class="p-3"></div>
+
+      <section class="ftco-section" id="buttons">
+        <div class="">
+          <div class="row">
+          <div class="col-md-4">
+          <div class="row  p-3">
+            
+            
+                <div class="col-md-12 " style="text-align: center;">
+                  <a href="{% url 'FIXTURE' %}" class="btn mb-2 btn-lg text-light btn-block mb-md-0 btn btn-block" role="button" aria-disabled="true">New Fixtures </a>
+                </div>
+              </div>
+                <div class="row  p-3">
+
+                <div class="col-md-12  " style="text-align: center;  ">
+                  <a href="{% url 'SIGNIN' %}" class="btn mb-2 btn-lg text-light btn-block mb-md-0 btn btn-block" role="button" aria-disabled="true">Make Prediction</a>
+                  
+                </div>
+                </div>
+                <div class="row  p-3">
+                <div class="col-md-12  " style="text-align: center;">
+                  <a href="{% url 'RESULTS' %}" class="btn mb-2 btn-lg text-light btn-block mb-md-0 btn btn-block" role="button" aria-disabled="true">Results </a>
+                  
+                </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <img class="d-block w-100 h-100" src="/static/images/Data/Backgrounds/PicsArt_11-03-07.51.59.jpg" alt="Third slide">
+
+
+              </div>
+              <div class="col-md-4">
+                <img class="d-block  h-100" style="width: 95%;" src="/static/images/Data/Backgrounds/PicsArt_11-03-07.56.15.jpg" alt="Third slide">
+
+
+              </div>
+            
+            </div>
+        
+        </div>
+      </section>
+
+      <div class="p-3"></div>
+      
+      <div class="row" style="background-color:#000000;">
+
+       
+        
+        <div class="col-10 px-5" style="color: white; ">
+          <p>Like the FIFA World Cup, the UEFA Champions League is sponsored by a group of multinational corporations It was decided that a maximum of eight companies should be allowed to sponsor the event, with each corporation being allocated four advertising boards around the perimeter of the pitch, as well as logo placement at pre- and post-match interviews and a certain number of tickets to each match. This, combined with a deal to ensure tournament sponsors were given priority on television advertisements during matches, ensured that each of the tournament's main sponsors was given maximum exposure. The UEFA Champions League (abbreviated as UCL) is an annual club football competition organised by the Union of European Football Associations (UEFA) and contested by top-division European clubs, deciding the competition winners through a round robin group stage to qualify for a double-legged knockout format, and a single leg final. It is one of the most prestigious football tournaments in the world and the most prestigious club competition in European football, played by the national league champions (and, for some nations, one or more runners-up) of their national associations. In its present format, the Champions League begins in late June with a preliminary round, three qualifying rounds and a play-off round, all played over two legs. The six surviving teams enter the group stage, joining 26 teams qualified in advance. The 32 teams are drawn into eight groups of four teams and play each other in a double round-robin system. The competition has been won by 22 clubs, 13 of which have won it more than once and eight successfully defended their title. Real Madrid is the most successful club in the tournament's history, having won It 13 times, including its first five seasons. Chelsea are the reigning champions, having beaten Manchester City 1-0 In the 2021 final. 
+          </p>
+        </div>
+
+        <div class="col" >
+          <img src="static\images\v68_8.png" alt="NOt" style="height: 70%; width: 75%;" >
+        </div>
+
+      </div>
+
+      
+      
+      
+
+
+  <script src="https://kit.fontawesome.com/4f8ac3e447.js" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

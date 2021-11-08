@@ -1,0 +1,24 @@
+.background{
+    background-image: url('/static/images/background.jpg');
+}
+
+
+body{
+    background-image: url('/static/images/Data/Backgrounds/PicsArt_11-03-08.00.43.jpg');
+    background-color: rgb(20, 6, 78);
+}
+
+h2{
+    text-align: center;
+    color: #fff;
+}
+li{
+    text-align: left;
+    size: 20px;
+}
+.custom {
+    width: 78px !important;
+}
+
+
+

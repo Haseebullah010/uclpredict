@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/customnavbar.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/mcqs.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    
+</head>
+<body >
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark  static-top background">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/static/images/v68_8.png" alt="..." height=50px>
+          </a>
+          <a class="navbar-brand" href="#"> <h4>Champion league</h4> </a>
+
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                
+              <li class="nav-item px-1">
+                <a class="nav-link active btn btn-block btn-outline-dark " aria-current="page" href="{% url 'HOME' %}">Home</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link btn btn-block btn-outline-primary " aria-current="page" href="{% url 'USER_LOGOUT' %}">LogOut</a>
+              </li>
+              <li class="nav-item px-1">
+                <h3 style=" text-align: end; color:white;">Welcome {{request.user}}</h3>
+
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="py-5"></div>
+
+
+    {% if context %}
+
+    <table class="table table-striped" style="color: blanchedalmond;">
+        <tbody style="color: blanchedalmond;"> 
+            <tr class="card-header">
+                <th>Firt Name</th>
+            <th>last Name</th>
+            <th>Full Name</th>
+            <th>email</th>
+            <th>date join</th>
+            <th>last login</th>
+
+            
+            </tr>
+            <tr class="card-body">
+                <td> {{request.user.first_name}}</td>
+                <td> {{context.lastname}}</td>
+                <td> {{context.name}}</td>
+                <td> {{context.email}}</td>
+                <td> {{context.datejoined}}</td>
+                <td> {{context.lastlogin}}</td>
+            
+            </tr>
+            
+        </tbody>
+    </table>
+    
+    {% endif %}
+ 
+       
+      {{results.key0}}
+
+
+      <form action=" {%  url 'take_quiz' %} " method="post" >
+        {% csrf_token %}  
+        <div class="container-fluid ">
+          <div class="p-3"></div>
+          
+          <div class="modal-dialog ">
+              <div class="modal-content background" style="height: 500px; width: 600px;">
+                  <div class="modal-header" style="color:white;">
+                      <h3> {{data2.team1}} vs {{data2.team2}} who will win ?</h3>
+                  </div>
+                  <div class="p-3"></div>
+                  <div class="modal-body">
+                      <div class="col-xs-3 "> 
+                        
+                      </div>
+                      <div class="quiz" id="quiz" data-toggle="buttons">
+                         
+                      <label class="element-animation1 btn mb-2 btn-lg text-light btn-block mb-md-0 btn btn-block">
+                        <span class="btn-label"><i class="glyphicon glyphicon-chevron-right">
+
+                        </i></span> 
+                        <input type = "radio" class="rb" name="Option3"  value="1"> {{data2.option1}}</label> 
+                        <label class="element-animation2 btn mb-2 btn-lg text-light btn-block mb-md-0 btn btn-block">
+                          <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i>
+                          </span>
+                           <input type = "radio" class="rb" name="Option3"  value="2"> {{data2.option2}}</label> 
+                           <label class="element-animation3 btn mb-2 btn-lg text-light btn-block mb-md-0 btn btn-block">
+                             <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> 
+                             <input type = "radio" class="rb" name="Option3"  value="3"> {{data2.option3}}</label> 
+                        
+                                </div>
+                                <div class="p-3" style="text-align:right;">
+                                  <input type="submit" class="btn btn-outline-light" value="Submit"  >
+                                  
+                  <input type="hidden" id="custId" name="custId" value="{{data2.id}}">
+                  <input type="hidden" id="custId" name="custId2" value="{{total_matches}}">
+                        
+                              </div>
+                  </div>
+                 
+                </div>
+          </div>
+      </div>
+      
+     
+      </form>
+    <script src="https://kit.fontawesome.com/4f8ac3e447.js" crossorigin="anonymous"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      </body>
+</html>

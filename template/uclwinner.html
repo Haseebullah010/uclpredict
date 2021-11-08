@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/customnavbar.css">
+    
+    <title>Document</title>
+</head>
+<body>
+        
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark  static-top background">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/static/images/v68_8.png" alt="..." height=50px>
+          </a>
+          <a class="navbar-brand" href="#"> <h2>Champion league</h2> </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link btn btn-block" aria-current="page" href="{% url 'HOME' %}">Rivalries</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block " aria-current="page" href="{% url 'TRANSFERRUMORS' %}">Transfer Rumors</a>
+              </li>
+          
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'TOP8TEAM' %}">Top 8 Teams</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block " href="{% url 'FIFAPRO11' %}">Fifa Pro World 11</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block" href="{% url 'GREATTESTALLTIME' %}">Greatest All the Time</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  btn btn-block" href="{% url 'UCLTOPSCORER' %}">Ucl Top Scorrer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block active" href="{% url 'UCLWINNER' %}">Ucl winner</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block" href="{% url 'TOPPREDICTORS' %}">Top Predictors</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+      <div class="p-5"></div>
+
+     
+      <table class=" table  table-hover" style="background-color:#000000; color: white;" >
+        <thead>
+          <tr>
+            <th scope="col">Season</th>
+            <th scope="col">Winner</th>
+            <th scope="col">Runner Up</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in context %}
+          <tr>
+            <td>{{i.Season}}</td>
+            <td>{{i.Winner}}</td>
+            <td>{{i.RunnerUp}}</td>
+            <td>{{i.Score}}</td>
+          </tr>
+
+          {% endfor %}
+          
+        </tbody>
+      </table>
+
+      <!-- <table class="table table-dark table-striped table-hover" style="color: white;" >
+        <thead>
+          <tr>
+            <th scope="col">Season</th>
+            <th scope="col">Winner</th>
+            <th scope="col">Runnser Up</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>Chelsea</td>
+            <td>Manchester City</td>
+            <td>1–0</td>
+          </tr>
+          <tr>
+            <th scope="row">2019-20</th>
+            <td>Bayern Munich</td>
+            <td>Paris Saint-Germain</td>
+            <td>1–0</td>
+          </tr>
+          <tr>
+            <th scope="row">2018-19</th>
+            <td>Liverpool</td>
+            <td>Tottenham Hotspur</td>
+            <td>2–0</td>
+          </tr>
+          <tr>
+            <th scope="row">2017-18</th>
+            <td>Real Madrid</td>
+            <td>Liverpool</td>
+            <td>3–1</td>
+          </tr>
+          <tr>
+          <th scope="row">2016-17</th>
+          <td>Real Madrid</td>
+          <td>Juventus</td>
+          <td>4–1</td>
+        </tr>
+        <tr>
+        <th scope="row">2015-16</th>
+        <td>Real Madrid</td>
+        <td>Atlético Madrid</td>
+        <td>1–1(5-3)</td>
+      </tr>
+      <tr>
+      <th scope="row">2014-15</th>
+      <td>Barcelona</td>
+      <td>Juventus</td>
+      <td>3–1</td>
+    </tr>
+    <tr>
+    <th scope="row">2013-14</th>
+    <td>Real Madrid</td>
+    <td>Atlético Madrid</td>
+    <td>4–1</td>
+  </tr>
+  <tr>
+  <th scope="row">2012-13</th>
+  <td>Bayern Munich</td>
+  <td>Borussia Dortmund</td>
+  <td>2–1</td>
+</tr>
+<tr>
+  <th scope="row">2011-12</th>
+  <td>Chelsea</td>
+  <td>Bayern Munich</td>
+  <td>1–1(4-3)</td>
+</tr>
+<tr>
+  <th scope="row">2010-11</th>
+  <td>Barcelona</td>
+  <td>Manchester United</td>
+  <td>3–1</td>
+</tr>
+<tr>
+  <th scope="row">2009-10</th>
+  <td>Internazionale</td>
+  <td>Bayern Munich</td>
+  <td>3–1</td>
+</tr><tr>
+  <th scope="row">2008-09</th>
+  <td>Barcelona</td>
+  <td>Manchester United</td>
+  <td>3–1</td>
+</tr><tr>
+  <th scope="row">2007-08</th>
+  <td>Barcelona</td>
+  <td>Manchester United</td>
+  <td>3–1</td>
+</tr>
+        
+        </tbody>
+      </table> -->
+
+
+<script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    
+</body>
+</html>
